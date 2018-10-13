@@ -12,6 +12,7 @@ ES2015, ES2016, ES2017 and beyond.
 - [Getters/Setters](#getters-setters)
 - [Modules](#modules)
 - [Data Structures](#data-structures)
+- [Helpful string functions](#helpful-string-functions)
 - [Helpful array functions](#helpful-array-functions)
 - [Promises](#promises)
 - [Async/Await](#async-await)
@@ -148,3 +149,15 @@ function square() {
 
 square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 16, 56.25, 64, 132.25, 441]
 ```
+
+## Destructuring
+## Spread Operator
+## Function Parameters
+## Classes
+## Getters/Setters
+## Modules
+## Data Structures
+## Helpful string functions
+## Helpful array functions
+## Promises
+## Async/Await
