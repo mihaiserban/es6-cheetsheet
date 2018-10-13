@@ -5,10 +5,10 @@ ES2015, ES2016, ES2017 and beyond.
 - [Variable Declarations](#variable-declarations)
 - [String Templates](#string-templates)
 - [Arrow Functions](#arrow-functions)
+- [Classes](#classes)
 - [Destructuring](#destructing)
 - [Spread Operator](#spread-operator)
 - [Function Parameters](#function-parameters)
-- [Classes](#classes)
 - [Getters/Setters](#getters-setters)
 - [Modules](#modules)
 - [Data Structures](#data-structures)
@@ -150,10 +150,10 @@ function square() {
 square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 16, 56.25, 64, 132.25, 441]
 ```
 
+## Classes
 ## Destructuring
 ## Spread Operator
 ## Function Parameters
-## Classes
 ## Getters/Setters
 ## Modules
 ## Data Structures
