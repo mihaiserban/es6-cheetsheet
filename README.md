@@ -102,7 +102,7 @@ GET`http://foo.org/bar?a=${a}&b=${b}
       "bar": ${bar}}`(myOnReadyStateChangeHandler);
 ```
 
-**Template Literals** can accept expressions, as well:
+**Template Literals** can also accept expressions:
 
 ```javascript
 let today = new Date();
