@@ -59,6 +59,19 @@ const variable = 5;
 variable = variable*2; //TypeError: Attempted to assign to readonly property.
 ```
 
+Constants are tricky with array and objects. The `reference` becomes constant but the value does not.
+
+```javascript
+const variable = [5];
+
+console.log(variable) //[5]
+
+variable = [2]; //TypeError: Attempted to assign to readonly property.
+
+variable[0] = 1;
+console.log(variable) //[1]
+```
+
 ## String Templates
 
 Template strings provide syntactic sugar for constructing strings.
