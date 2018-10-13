@@ -61,6 +61,7 @@ variable = variable*2; //TypeError: Attempted to assign to readonly property.
 ## String Templates
 
 Template strings provide syntactic sugar for constructing strings.
+
 Using **Template Literals**, we can now construct strings that have special
 characters in them without needing to escape them explicitly.
 
@@ -85,4 +86,65 @@ GET`http://foo.org/bar?a=${a}&b=${b}
     X-Credentials: ${credentials}
     { "foo": ${foo},
       "bar": ${bar}}`(myOnReadyStateChangeHandler);
+```
+
+**Template Literals** can accept expressions, as well:
+
+```javascript
+let today = new Date();
+let text = `The time and date is ${today.toLocaleString()}`;
+```
+
+## Arrow Functions
+
+Arrows are a function shorthand using the `=>` syntax. 
+Arrow functions allow you to preserve the lexical value of `this`.
+
+Take the example below where we have a nested function, in which we would like to preserve the
+context of `this` from its lexical scope:
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.prefixName = function (arr) {
+    return arr.map(function (character) {
+        return this.name + character; // Cannot read property 'name' of undefined
+    });
+};
+```
+
+Using **Arrow Functions**, the lexical value of `this` isn't shadowed and we
+can re-write the above as shown:
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.prefixName = function (arr) {
+    return arr.map(character => this.name + character);
+};
+```
+
+If an arrow is inside another function, it shares the "arguments" variable of its parent function.
+Example:
+
+```javascript
+// Lexical arguments
+function square() {
+  let example = () => {
+    let numbers = [];
+    for (let number of arguments) {
+      numbers.push(number * number);
+    }
+
+    return numbers;
+  };
+
+  return example();
+}
+
+square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 16, 56.25, 64, 132.25, 441]
 ```
