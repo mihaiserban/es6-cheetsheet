@@ -164,6 +164,74 @@ square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 16, 56.25, 64, 132.25, 441]
 ```
 
 ## Classes
+
+Prior to ES6, we implemented Classes by creating a constructor function and
+adding properties by extending the prototype:
+
+```javascript
+function Person(name, age, gender) {
+    this.name   = name;
+    this.age    = age;
+    this.gender = gender;
+}
+
+Person.prototype.incrementAge = function () {
+    return this.age += 1;
+};
+```
+
+And created extended classes by the following:
+
+```javascript
+function Personal(name, age, gender, occupation, hobby) {
+    Person.call(this, name, age, gender);
+    this.occupation = occupation;
+    this.hobby = hobby;
+}
+
+Personal.prototype = Object.create(Person.prototype);
+Personal.prototype.constructor = Personal;
+Personal.prototype.incrementAge = function () {
+    Person.prototype.incrementAge.call(this);
+    this.age += 20;
+    console.log(this.age);
+};
+```
+
+ES6 classes are a simple sugar over the prototype-based OO pattern. Classes support prototype-based inheritance, super calls, instance and static methods and constructors:
+
+```javascript
+class Person {
+    constructor(name, age, gender) {
+        this.name   = name;
+        this.age    = age;
+        this.gender = gender;
+    }
+
+    incrementAge() {
+      this.age += 1;
+    }
+}
+```
+
+And extend them using the `extends` keyword:
+
+```javascript
+class Personal extends Person {
+    constructor(name, age, gender, occupation, hobby) {
+        super(name, age, gender);
+        this.occupation = occupation;
+        this.hobby = hobby;
+    }
+
+    incrementAge() {
+        super.incrementAge();
+        this.age += 20;
+        console.log(this.age);
+    }
+}
+```
+
 ## Destructuring
 ## Spread Operator
 ## Function Parameters
