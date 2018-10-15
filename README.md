@@ -233,6 +233,76 @@ class Personal extends Person {
 ```
 
 ## Destructuring
+
+### Destructing assignment
+
+Destructuring assignment allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals.
+
+Old way:
+```javascript
+var first = someArray[0];
+var second = someArray[1];
+var third = someArray[2];
+```
+
+New way:
+```javascript
+var [first, second, third] = someArray;
+```
+
+### Destructuring arrays and iterables
+
+If you want to declare your variables at the same time, you can add a `var`, `let`, or `const` in front of the assignment.
+
+```javascript
+var [ variable1, variable2, ..., variableN ] = array;
+let [ variable1, variable2, ..., variableN ] = array;
+const [ variable1, variable2, ..., variableN ] = array;
+```
+
+You can skip over items in the array being destructured:
+
+```javascript
+var [,,third] = ["foo", "bar", "baz"];
+console.log(third);
+// "baz"
+```
+
+You can capture all trailing items in an array with a “rest” pattern:
+
+```javascript
+var [head, ...tail] = [1, 2, 3, 4];
+console.log(tail);
+// [2, 3, 4]
+```
+
+### Destructuring objects
+
+Old way of destructing an object:
+
+```javascript
+var person = { first_name: 'Joe', last_name: 'Appleseed' };
+var first_name = person.first_name; // 'Joe'
+var last_name = person.last_name; // 'Appleseed'
+```
+
+New way of destructing an object:
+
+```javascript
+let person = { first_name: 'Joe', last_name: 'Appleseed' };
+let {first_name, last_name} = person;
+
+console.log(first_name); // 'Joe'
+console.log(last_name); // 'Appleseed'
+```
+
+When you destructure on properties that are not defined, you get undefined:
+
+```javascript
+var { missing } = {};
+console.log(missing); // undefined
+```
+
 ## Spread Operator
 ## Function Parameters
 ## Getters/Setters
