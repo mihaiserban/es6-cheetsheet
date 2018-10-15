@@ -8,7 +8,6 @@ ES2015, ES2016, ES2017 and beyond.
 - [Classes](#classes)
 - [Destructuring](#destructuring)
 - [Spread Operator](#spread-operator)
-- [Function Parameters](#function-parameters)
 - [Getters/Setters](#getters-setters)
 - [Modules](#modules)
 - [Data Structures](#data-structures)
@@ -348,8 +347,48 @@ var arr2 = [...arr]; // like arr.slice()
 arr2.push(4)
 ```
 
-## Function Parameters
 ## Getters/Setters
+
+ES6 has started supporting getter and setter functions within classes. Using the following example:
+
+```javascript
+class Person {
+
+    constructor(name) {
+        this._name = name;
+    }
+
+    get name() {
+      if(this._name) {
+        return this._name.toUpperCase();  
+      } else {
+        return undefined;
+      }  
+    }
+
+    set name(newName) {
+      if (newName == this._name) {
+        console.log('I already have this name.');
+      } else if (newName) {
+        this._name = newName;
+      } else {
+        return false;
+      }
+    }
+}
+
+let person = new Person("John Doe");
+
+// uses the get method in the background
+if (person.name) {
+  console.log(person.name);  // John Doe
+}
+
+// uses the setter in the background
+person.name = "Jane Doe";
+console.log(person.name);  // Jane Doe 
+```
+
 ## Modules
 ## Data Structures
 ## Helpful string functions
