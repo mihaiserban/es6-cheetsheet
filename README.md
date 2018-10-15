@@ -6,7 +6,7 @@ ES2015, ES2016, ES2017 and beyond.
 - [String Templates](#string-templates)
 - [Arrow Functions](#arrow-functions)
 - [Classes](#classes)
-- [Destructuring](#destructing)
+- [Destructuring](#destructuring)
 - [Spread Operator](#spread-operator)
 - [Function Parameters](#function-parameters)
 - [Getters/Setters](#getters-setters)
@@ -234,7 +234,7 @@ class Personal extends Person {
 
 ## Destructuring
 
-### Destructing assignment
+### Destructuring assignment
 
 Destructuring assignment allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals.
 
