@@ -407,6 +407,102 @@ module.exports = function bar () {};
 
 ### Exporting in ES6
 
+**Named Exports**:
+
+```javascript
+export function multiply (x, y) {
+  return x * y;
+};
+```
+
+As well as **exporting a list** of objects:
+
+```javascript
+function add (x, y) {
+  return x + y;
+};
+
+function multiply (x, y) {
+  return x * y;
+};
+
+export { add, multiply };
+```
+
+**Default export**:
+
+In our module, we can have many named exports, but we can also have a default export. It’s because our module could be a large library and with default export we can import then an entire module.
+
+Important to note that there's only `one default export per module`. 
+
+```javascript
+export default function (x, y) {
+  return x * y;
+};
+```
+
+This time we don’t have to use curly braces for importing and we have a chance to name imported statement as we wish.
+
+```javascript
+import multiply from 'module';
+// === OR ===
+import whatever from 'module';
+```
+
+A module can have both named exports and a default export:
+
+```javascript
+// module.js
+export function add (x, y) {
+  return x + y;
+};
+export default function (x, y) {
+  return x * y;
+};
+
+// app.js
+import multiply, { add } from 'module';
+```
+
+The default export is just a named export with the special name default.
+
+```javascript
+// module.js
+export default function (x, y) {
+  return x * y;
+};
+
+// app.js
+import { default } from 'module';
+```
+
+### Importing in ES6
+
+```javascript
+import { add } from 'module';
+```
+
+We can even import many statements:
+
+```javascript
+import { add, multiply } from 'module';
+```
+
+Imports may also be **aliased**:
+
+```javascript
+import { 
+  add as addition, 
+  multiply as multiplication
+} from 'module';
+```
+
+and use wildcard (*) to import all exported statemets:
+
+```javascript
+import * from 'module';
+```
+
 ## Data Structures
 ## Helpful string functions
 ## Helpful array functions
