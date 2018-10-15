@@ -304,6 +304,50 @@ console.log(missing); // undefined
 ```
 
 ## Spread Operator
+
+The spread syntax is simply three dots: `...`
+It allows an iterable to expand in places where 0+ arguments are expected.
+
+### Calling Functions without Apply:
+
+```javascript
+function doStuff (x, y, z) { }
+var args = [0, 1, 2];
+
+// Call the function, passing args
+doStuff.apply(null, args);
+```
+
+Using spread operator: 
+
+```javascript
+doStuff(...args);
+```
+
+Or another example using Math functions:
+
+```javascript
+const arr = [2, 4, 8, 6, 0];
+const max = Math.max(...arr);
+
+console.log(max); //8
+```
+
+### Combine arrays
+
+```javascript
+let mid = [3, 4];
+let arr = [1, 2, ...mid, 5, 6]; //[1, 2, 3, 4, 5, 6]
+```
+
+### Copy arrays
+
+```javascript 
+var arr = [1,2,3];
+var arr2 = [...arr]; // like arr.slice()
+arr2.push(4)
+```
+
 ## Function Parameters
 ## Getters/Setters
 ## Modules
