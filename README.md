@@ -497,14 +497,98 @@ import {
 } from 'module';
 ```
 
-and use wildcard (*) to import all exported statemets:
+and use wildcard (`*`) to import all exported statemets:
 
 ```javascript
 import * from 'module';
 ```
 
 ## Data Structures
+
+### Map
+### WeakMap
+### Set
+### WeakSet
+
 ## Helpful string functions
+
+### .includes( )
+
+```javascript
+var string = 'string';
+var substring = 'str';
+
+console.log(string.indexOf(substring) > -1);
+```
+
+Instead of checking for a return value `> -1` to denote string containment,
+we can simply use `.includes()` which will return a boolean:
+
+```javascript
+const string = 'string';
+const substring = 'str';
+
+console.log(string.includes(substring)); // true
+```
+
+### .repeat( )
+
+```javascript
+function repeat(string, count) {
+    var strings = [];
+    while(strings.length < count) {
+        strings.push(string);
+    }
+    return strings.join('');
+}
+```
+
+In ES6, we now have access to a terser implementation:
+
+```javascript
+// String.repeat(numberOfRepetitions)
+'str'.repeat(3); // 'strstrstr'
+```
+
 ## Helpful array functions
+
+`from`
+```javascript
+const inventory = [
+    {name: 'mars', quantity: 2},
+    {name: 'snickers', quantity: 3}
+];
+console.log(Array.from(inventory, item => item.quantity + 2)); // [4, 5]
+```
+
+`of`
+```javascript
+Array.of("Twinkle", "Little", "Star"); // returns ["Twinkle", "Little", "Star"]
+```
+
+`find`
+```javascript
+const inventory = [
+    {name: 'mars', quantity: 2},
+    {name: 'snickers', quantity: 3}
+];
+console.log(inventory.find(item => item.name === 'mars')); // {name: 'mars', quantity: 2}
+```
+
+`findIndex`
+```javascript
+const inventory = [
+    {name: 'mars', quantity: 2},
+    {name: 'snickers', quantity: 3}
+];
+console.log(inventory.find(item => item.name === 'mars')); // 0
+```
+
+`fill` method takes up to three arguments value, start and end. The start and end arguments are optional with default values of 0 and the length of the this object.
+```javascript
+[1, 2, 3].fill(1); // [1, 1, 1]
+[1, 2, 3].fill(4, 1, 2); // [1, 4, 3]
+```
+
 ## Promises
 ## Async/Await
