@@ -390,6 +390,23 @@ console.log(person.name);  // Jane Doe
 ```
 
 ## Modules
+
+Prior to ES6, we used libraries such as [Browserify](http://browserify.org/)
+to create modules on the client-side, and [require](https://nodejs.org/api/modules.html#modules_module_require_id)
+in **Node.js**. With ES6, we can now directly use modules of all types
+(AMD and CommonJS).
+
+### Exporting in CommonJS
+
+```javascript
+module.exports = 1;
+module.exports = { foo: 'bar' };
+module.exports = ['foo', 'bar'];
+module.exports = function bar () {};
+```
+
+### Exporting in ES6
+
 ## Data Structures
 ## Helpful string functions
 ## Helpful array functions
