@@ -278,7 +278,7 @@ console.log(tail);
 
 ### Destructuring objects
 
-Old way of destructing an object:
+Old way of destructuring an object:
 
 ```javascript
 var person = { first_name: 'Joe', last_name: 'Appleseed' };
@@ -286,7 +286,7 @@ var first_name = person.first_name; // 'Joe'
 var last_name = person.last_name; // 'Appleseed'
 ```
 
-New way of destructing an object:
+New way of destructuring an object:
 
 ```javascript
 let person = { first_name: 'Joe', last_name: 'Appleseed' };
