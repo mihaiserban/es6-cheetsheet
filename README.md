@@ -672,6 +672,28 @@ Promise.all(promises)
 ```
 
 ## Generators
+
+A `generator` is a function that **can stop midway** and then continue from where it stopped. **In short, a generator appears to be a function but it behaves like an iterator**.
+
+For creating a generator function, we use `function *` syntax instead of just `function`.
+
+Inside the function body, we don’t have a `return`. Instead, we have another keyword `yield`. Every time a generator encounters a `yield`, it “returns” the value specified after it.
+
+```javascript
+function * naturalNumbers() {
+  let num = 1;
+  while (true) {
+    yield num;
+    num = num + 1
+  }
+}
+const numbers = naturalNumbers();
+console.log(numbers.next().value)
+console.log(numbers.next().value)
+// 1
+// 2
+```
+
 ## Async/Await
 
 Async/Await is a ES2016 feature.
