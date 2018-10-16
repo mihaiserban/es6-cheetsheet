@@ -14,6 +14,7 @@ ES2015, ES2016, ES2017 and beyond.
 - [Helpful string functions](#helpful-string-functions)
 - [Helpful array functions](#helpful-array-functions)
 - [Promises](#promises)
+- [Generators](#generators)
 - [Async/Await](#async-await)
 
 ## Variable Declarations
@@ -670,4 +671,32 @@ Promise.all(promises)
  });
 ```
 
+## Generators
 ## Async/Await
+
+Async/Await is a ES2016 feature.
+
+Note that `await` may only be used in functions marked with the `async` keyword. It works similarly to generators, suspending execution in your context until the promise settles. If the awaited expression isn’t a promise, its casted into a promise.
+
+ `async await` allows us to perform the same thing we accomplished using Generators and Promises with less effort:
+
+```javascript
+var request = require('request');
+
+function getJSON(url) {
+  return new Promise(function(resolve, reject) {
+    request(url, function(error, response, body) {
+      resolve(body);
+    });
+  });
+}
+
+async function main() {
+  var data = await getJSON();
+  console.log(data); // NOT undefined!
+}
+
+main();
+```
+
+Under the hood, it performs similarly to Generators. I highly recommend using them over Generators + Promises.
