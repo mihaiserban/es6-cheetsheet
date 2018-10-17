@@ -673,11 +673,57 @@ Promise.all(promises)
 
 ## Generators
 
-A `generator` is a function that **can stop midway** and then continue from where it stopped. **In short, a generator appears to be a function but it behaves like an iterator**.
+A `generator` is a function which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
+
+Generators in JavaScript are a very powerful tool for asynchronous programming as they mitigate the problems with callbacks, such as `Callback Hell` and `Inversion of Control`. 
+This pattern is what `async` functions are built on top of.
 
 For creating a generator function, we use `function *` syntax instead of just `function`.
 
-Inside the function body, we don’t have a `return`. Instead, we have another keyword `yield`. Every time a generator encounters a `yield`, it “returns” the value specified after it.
+Calling a generator function does not execute its body immediately; an iterator object for the function is returned instead.
+When the iterator's `next()` method is called, the generator function's body is executed until the first `yield` expression, which specifies the value to be returned from the iterator or, with `yield*`, delegates to another generator function. 
+
+The `next()` method returns an object with a value property containing the yielded value and a done property which indicates whether the generator has yielded its last value as a boolean. Calling the `next()` method with an argument will resume the generator function execution, replacing the yield expression where execution was paused with the argument from `next()`. 
+
+**Simple example**:
+
+```javascript
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+
+var gen = generator(10);
+
+console.log(gen.next().value);// expected output: 10
+console.log(gen.next().value); // expected output: 20
+```
+
+**Example with yield***:
+
+```javascript
+function* anotherGenerator(i) {
+  yield i + 1;
+  yield i + 2;
+  yield i + 3;
+}
+
+function* generator(i) {
+  yield i;
+  yield* anotherGenerator(i);
+  yield i + 10;
+}
+
+var gen = generator(10);
+
+console.log(gen.next().value); // 10
+console.log(gen.next().value); // 11
+console.log(gen.next().value); // 12
+console.log(gen.next().value); // 13
+console.log(gen.next().value); // 20
+```
+
+**Infinite Data generator example**:
 
 ```javascript
 function * naturalNumbers() {
