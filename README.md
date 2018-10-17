@@ -79,39 +79,58 @@ console.log(variable) //[1]
 
 ## String Templates
 
-Template strings provide syntactic sugar for constructing strings.
-
-Using **Template Literals**, we can now construct strings that have special
-characters in them without needing to escape them explicitly.
+Template Strings use back-ticks \`\` rather than the single or double quotes we're used to with regular strings. A template string could thus be written as follows:
 
 ```javascript
-// Basic literal string creation
-`This is a pretty little template string.`
-
-// Multiline strings
-`In ES5 this is
- not legal.`
-
-// Interpolate variable bindings
-var name = "Bob", time = "today";
-`Hello ${name}, how are you ${time}?`
-
-// Unescaped template strings
-String.raw`In ES5 "\n" is a line-feed.`
-
-// Construct an HTTP request prefix is used to interpret the replacements and construction
-GET`http://foo.org/bar?a=${a}&b=${b}
-    Content-Type: application/json
-    X-Credentials: ${credentials}
-    { "foo": ${foo},
-      "bar": ${bar}}`(myOnReadyStateChangeHandler);
+const greeting = `Yo World!`;
 ```
 
-**Template Literals** can also accept expressions:
+**String Substitution**:
+
+Substitution allows us to place any valid JavaScript expression inside a Template Literal, the result will be output as part of the same string.
+
+Template Strings can contain placeholders for string substitution using the `${ }` syntax:
 
 ```javascript
-let today = new Date();
-let text = `The time and date is ${today.toLocaleString()}`;
+var name = "Brendan";
+console.log(`Yo, ${name}!`); //"Yo, Brendan!"
+```
+
+We can use expression interpolation to embed for some readable inline math:
+
+```javascript
+var a = 10;
+var b = 10;
+console.log(`${a+b}`); //20
+```
+
+They are also very useful for functions inside expressions:
+
+```javascript
+function fn() { return "inside fn"; }
+console.log(`outside, ${fn()}, outside`); // outside, inside fn, outside.
+```
+
+**Multiline Strings**:
+
+Multiline strings in JavaScript have required hacky workarounds for some time.
+Template Strings significantly simplify multiline strings. Simply include newlines where they are needed and BOOM. 
+
+```javascript
+let text = `In ES5 this is
+ not legal.`
+```
+
+**Unescaped template strings**:
+
+we can now construct strings that have special characters in them without needing to escape them explicitly.
+
+```javascript
+var text = "This string contains \"double quotes\" which are escaped.";
+```
+
+```javascript
+let text = `This string contains "double quotes" which don't need to be escaped anymore.`;
 ```
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
