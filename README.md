@@ -11,7 +11,7 @@
 - [Classes](#classes)
 - [Destructuring](#destructuring)
 - [Spread Operator](#spread-operator)
-- [Getter and setter functions](#getters-and-setter-functions)
+- [Getter and setter functions](#getter-and-setter-functions)
 - [Modules](#modules)
 - [Data Structures](#data-structures)
 - [Helpful string functions](#helpful-string-functions)
@@ -937,3 +937,5 @@ main();
 ```
 
 Under the hood, it performs similarly to Generators. I highly recommend using them over Generators + Promises.
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
