@@ -11,14 +11,14 @@
 - [Classes](#classes)
 - [Destructuring](#destructuring)
 - [Spread Operator](#spread-operator)
-- [Getters/Setters](#getters-setters)
+- [Getter and setter functions](#getters-and-setter-functions)
 - [Modules](#modules)
 - [Data Structures](#data-structures)
 - [Helpful string functions](#helpful-string-functions)
 - [Helpful array functions](#helpful-array-functions)
 - [Promises](#promises)
 - [Generators](#generators)
-- [Async/Await](#async-await)
+- [Async Await](#async-await)
 
 ## Variable Declarations
 
