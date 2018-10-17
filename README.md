@@ -363,7 +363,7 @@ arr2.push(4)
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
-## Getters/Setters
+## Getter and setter functions
 
 ES6 has started supporting getter and setter functions within classes. Using the following example:
 
@@ -909,7 +909,7 @@ console.log(numbers.next().value)
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
-## Async/Await
+## Async Await
 
 Async/Await is a ES2016 feature.
 
