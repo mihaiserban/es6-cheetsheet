@@ -507,6 +507,58 @@ import * from 'module';
 ## Data Structures
 
 ### Map
+
+A `Map` is a data structure allows to associate data to a key.
+
+Before it's intruduction in ES6, people generally used objects as maps, by associating some object or value to a specific key value:
+
+```javascript
+const person = {}
+person.name = 'John'
+person.age = 18
+
+console.log(person.name) //John
+console.log(person.age) //18
+```
+
+`Map` example:
+
+```javascript
+const person = new Map()
+
+person.set('name', 'John')
+person.set('age', 18)
+
+const name = person.get('name')
+const age = person.get('age')
+
+console.log(name) //John
+console.log(age) //18
+```
+
+The `Map` also provide us with methods to help us manage the data.
+
+`delete()` method - deletes an item from a map by key:
+```javascript
+person.delete('name')
+```
+
+`clear()` method - delete all items from a map:
+```javascript
+person.clear()
+```
+
+`has()` method - check if a map contains an item by key:
+```javascript
+const hasName = person.has('name')
+```
+
+`size()` method - check the number of items in a map:
+```javascript
+const size = person.size
+```
+
+Find more details about `Map` here ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map']
 ### WeakMap
 ### Set
 ### WeakSet
