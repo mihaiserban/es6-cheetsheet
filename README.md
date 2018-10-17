@@ -1,6 +1,8 @@
 # es6-cheetsheet
 ES2015, ES2016, ES2017 and beyond.
 
+Pull requests are welcomed 🙏🏻❤️
+
 ## TABLE OF CONTENTS
 - [Variable Declarations](#variable-declarations)
 - [String Templates](#string-templates)
