@@ -558,9 +558,35 @@ const hasName = person.has('name')
 const size = person.size
 ```
 
-Find more details about `Map` here ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map']
+Find more details about `Map` [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
 ### WeakMap
+
+A `WeakMap` is a special kind of map.
+
+In a `Map`, items are never garbage collected. A `WeakMap` instead lets all its items be freely garbage collected. Every key of a `WeakMap` is an object. When the reference to this object is lost, the value can be garbage collected.
+
+Main differences between `WeakMap` and `Map`:
+
+ - you cannot iterate over the keys or values (or key-values) of a WeakMap
+ - you cannot clear all items from a WeakMap
+ - you cannot check its size
+ 
+A WeakMap exposes those methods, which are equivalent to the Map ones:
+
+```javascript
+get(k)
+set(k, v)
+has(k)
+delete(k)
+```
+
+The use cases of a `WeakMap` are less evident than the ones of a `Map`, and you might never find the need for them, but essentially it can be used to build a memory-sensitive cache that is not going to interfere with garbage collection, or for careful encapsualtion and information hiding.
+
+Find more details about `WeakMap` [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+
 ### Set
+
 ### WeakSet
 
 ## Helpful string functions
