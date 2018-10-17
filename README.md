@@ -75,6 +75,8 @@ variable[0] = 1;
 console.log(variable) //[1]
 ```
 
+<sup>[(back to table of contents)](#table-of-contents)</sup>
+
 ## String Templates
 
 Template strings provide syntactic sugar for constructing strings.
@@ -111,6 +113,8 @@ GET`http://foo.org/bar?a=${a}&b=${b}
 let today = new Date();
 let text = `The time and date is ${today.toLocaleString()}`;
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Arrow Functions
 
@@ -165,6 +169,8 @@ function square() {
 
 square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 16, 56.25, 64, 132.25, 441]
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Classes
 
@@ -234,6 +240,8 @@ class Personal extends Person {
     }
 }
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Destructuring
 
@@ -306,6 +314,8 @@ var { missing } = {};
 console.log(missing); // undefined
 ```
 
+<sup>[(back to table of contents)](#table-of-contents)</sup>
+
 ## Spread Operator
 
 The spread syntax is simply three dots: `...`
@@ -351,6 +361,8 @@ var arr2 = [...arr]; // like arr.slice()
 arr2.push(4)
 ```
 
+<sup>[(back to table of contents)](#table-of-contents)</sup>
+
 ## Getters/Setters
 
 ES6 has started supporting getter and setter functions within classes. Using the following example:
@@ -392,6 +404,8 @@ if (person.name) {
 person.name = "Jane Doe";
 console.log(person.name);  // Jane Doe 
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Modules
 
@@ -506,6 +520,8 @@ and use wildcard (`*`) to import all exported statemets:
 ```javascript
 import * from 'module';
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Data Structures
 
@@ -653,6 +669,8 @@ WeakSet.prototype.delete(value) : boolean
 
 Important thing to note `WeakSet` is a collection that can‘t be iterated and whose size cannot be determined.
 
+<sup>[(back to table of contents)](#table-of-contents)</sup>
+
 ## Helpful string functions
 
 ### .includes( )
@@ -693,6 +711,8 @@ In ES6, we now have access to a terser implementation:
 'str'.repeat(3); // 'strstrstr'
 ```
 
+<sup>[(back to table of contents)](#table-of-contents)</sup>
+
 ## Helpful array functions
 
 `from`
@@ -732,6 +752,8 @@ console.log(inventory.find(item => item.name === 'mars')); // 0
 [1, 2, 3].fill(1); // [1, 1, 1]
 [1, 2, 3].fill(4, 1, 2); // [1, 4, 3]
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Promises
 
@@ -813,6 +835,8 @@ Promise.all(promises)
  });
 ```
 
+<sup>[(back to table of contents)](#table-of-contents)</sup>
+
 ## Generators
 
 A `generator` is a function which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
@@ -882,6 +906,8 @@ console.log(numbers.next().value)
 // 1
 // 2
 ```
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Async/Await
 
