@@ -676,6 +676,7 @@ Promise.all(promises)
 A `generator` is a function which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
 
 Generators in JavaScript are a very powerful tool for asynchronous programming as they mitigate the problems with callbacks, such as `Callback Hell` and `Inversion of Control`. 
+
 This pattern is what `async` functions are built on top of.
 
 For creating a generator function, we use `function *` syntax instead of just `function`.
