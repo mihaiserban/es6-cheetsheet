@@ -296,19 +296,17 @@ You can skip over items in the array being destructured:
 
 ```javascript
 var [,,third] = ["foo", "bar", "baz"];
-console.log(third);
-// "baz"
+console.log(third); // "baz"
 ```
 
 You can capture all trailing items in an array with a “rest” pattern:
 
 ```javascript
 var [head, ...tail] = [1, 2, 3, 4];
-console.log(tail);
-// [2, 3, 4]
+console.log(tail); // [2, 3, 4]
 ```
 
-### Object destructing
+### Object destructuring
 
 Old way of destructuring an object:
 
