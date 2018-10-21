@@ -777,7 +777,7 @@ const inventory = [
     {name: 'mars', quantity: 2},
     {name: 'snickers', quantity: 3}
 ];
-console.log(inventory.find(item => item.name === 'mars')); // 0
+console.log(inventory.findIndex(item => item.name === 'mars')); // 0
 ```
 
 `fill` method takes up to three arguments value, start and end. The start and end arguments are optional with default values of 0 and the length of the this object.
