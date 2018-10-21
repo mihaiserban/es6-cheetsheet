@@ -279,7 +279,7 @@ var third = someArray[2];
 
 New way:
 ```javascript
-var [first, second, third] = someArray;
+let [first, second, third] = someArray;
 ```
 
 ### Destructuring arrays and iterables
@@ -295,14 +295,14 @@ const [ variable1, variable2, ..., variableN ] = array;
 You can skip over items in the array being destructured:
 
 ```javascript
-var [,,third] = ["foo", "bar", "baz"];
+let [,,third] = ["foo", "bar", "baz"];
 console.log(third); // "baz"
 ```
 
 You can capture all trailing items in an array with a “rest” pattern:
 
 ```javascript
-var [head, ...tail] = [1, 2, 3, 4];
+const [head, ...tail] = [1, 2, 3, 4];
 console.log(tail); // [2, 3, 4]
 ```
 
