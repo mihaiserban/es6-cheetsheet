@@ -264,6 +264,8 @@ class Personal extends Person {
 
 ## Destructuring
 
+Destructuring is a convenient way of extracting multiple values from data stored in (possibly nested) objects and Arrays.
+
 ### Destructuring assignment
 
 Destructuring assignment allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals.
@@ -306,7 +308,7 @@ console.log(tail);
 // [2, 3, 4]
 ```
 
-### Destructuring objects
+### Object destructing
 
 Old way of destructuring an object:
 
@@ -329,10 +331,22 @@ console.log(last_name); // 'Appleseed'
 When you destructure on properties that are not defined, you get undefined:
 
 ```javascript
-var { missing } = {};
+let { missing } = {};
 console.log(missing); // undefined
 ```
 
+You can also destructure in a for-of loop:
+
+```javascript
+const arr = ['a', 'b'];
+for (const [index, element] of arr.entries()) {
+    console.log(index, element);
+}
+// Output:
+// 0 a
+// 1 b
+
+```
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Spread Operator
