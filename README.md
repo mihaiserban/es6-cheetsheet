@@ -700,6 +700,8 @@ WeakSet.prototype.delete(value) : boolean
 
 Important thing to note `WeakSet` is a collection that can‘t be iterated and whose size cannot be determined.
 
+Find more details about `WeakSet` [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## Helpful string functions
@@ -735,7 +737,7 @@ function repeat(string, count) {
 }
 ```
 
-In ES6, we now have access to a terser implementation:
+In ES6, we now have access to a nicer implementation:
 
 ```javascript
 // String.repeat(numberOfRepetitions)
