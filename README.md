@@ -387,8 +387,8 @@ let arr = [1, 2, ...mid, 5, 6]; //[1, 2, 3, 4, 5, 6]
 ### Copy arrays
 
 ```javascript 
-var arr = [1,2,3];
-var arr2 = [...arr]; // like arr.slice()
+let arr = [1,2,3];
+let arr2 = [...arr]; // like arr.slice()
 arr2.push(4)
 ```
 
