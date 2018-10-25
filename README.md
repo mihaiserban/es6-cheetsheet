@@ -266,9 +266,9 @@ class Personal extends Person {
 
 Destructuring is a convenient way of extracting multiple values from data stored in (possibly nested) objects and Arrays.
 
-### Destructuring assignment
+### Array
 
-Destructuring assignment allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals.
+Destructuring assignment allows you to assign the properties of an array using syntax that looks similar to array literals.
 
 Old way:
 ```javascript
@@ -282,8 +282,6 @@ New way:
 let [first, second, third] = someArray;
 ```
 
-### Destructuring arrays and iterables
-
 If you want to declare your variables at the same time, you can add a `var`, `let`, or `const` in front of the assignment.
 
 ```javascript
@@ -292,21 +290,40 @@ let [ variable1, variable2, ..., variableN ] = array;
 const [ variable1, variable2, ..., variableN ] = array;
 ```
 
-You can skip over items in the array being destructured:
+We can even skip a few variables:
 
 ```javascript
 let [,,third] = ["foo", "bar", "baz"];
 console.log(third); // "baz"
 ```
 
+There also no need to match the full array:
+
+```javascript
+let array = [1, 2, 3, 4];
+let [a, b, c] = array;
+console.log(a, b, c)
+// -------- 1  2  3
+```
+
 You can capture all trailing items in an array with a “rest” pattern:
 
 ```javascript
-const [head, ...tail] = [1, 2, 3, 4];
+const array = [1, 2, 3, 4];
+const [head, ...tail] = array;
+console.log(head); // 1
 console.log(tail); // [2, 3, 4]
 ```
 
-### Object destructuring
+Rest parameter must be applied as the last element, otherwise you'll get a `SyntaxError`.
+
+```javascript
+let array = [1, 2, 3, 4];
+let [...head, d] = array;
+// Uncaught SyntaxError: Unexpected token...
+```
+
+### Object
 
 Old way of destructuring an object:
 
@@ -343,7 +360,20 @@ for (const [index, element] of arr.entries()) {
 // Output:
 // 0 a
 // 1 b
+```
 
+We can use rest operator on an object as well (ES7):
+
+```javascript
+let object = {
+  a: 'A',
+  b: 'B',
+  c: 'C',
+  d: 'D',
+}
+
+const { a, b, ...other } = object; // es7
+console.log(other); // {c: 'C', d: 'D'}
 ```
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
