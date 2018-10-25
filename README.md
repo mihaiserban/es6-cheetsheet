@@ -297,7 +297,7 @@ let [,,third] = ["foo", "bar", "baz"];
 console.log(third); // "baz"
 ```
 
-There also no need to match the full array:
+There's also no need to match the full array:
 
 ```javascript
 let array = [1, 2, 3, 4];
